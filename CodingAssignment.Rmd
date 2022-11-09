@@ -56,3 +56,11 @@ GDP <- GDP %>%
   select(1,3,4,5)
 ```
 
+```{r}
+#Renaming the variables
+colnames(CO2)[5] = "CO2"
+colnames(GDP)[5] = "GDP"
+colnames(CO2)[3] = "CountryCode"
+colnames(GDP)[3] = "CountryCode"
+```
+
