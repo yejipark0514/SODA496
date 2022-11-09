@@ -8,3 +8,40 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+```{r}
+#Libraries
+library(readxl)
+library(dplyr)
+library(tidyverse)
+library(countrycode) #Do this when you get to merge section
+library(WDI)
+```
+
+```{r}
+#Read data sets from Worldbank
+CO2 <-
+WDI(
+  country = "all",
+  indicator = "EN.ATM.CO2E.PC",
+  start = 2000,
+  end = 2019,
+  extra = FALSE,
+  cache = NULL,
+  latest = NULL,
+  language = "en"
+)
+
+GDP <-
+  WDI(
+  country = "all",
+  indicator = "NY.GDP.PCAP.CD",
+  start = 2000,
+  end = 2019,
+  extra = FALSE,
+  cache = NULL,
+  latest = NULL,
+  language = "en"
+  )
+```
+
