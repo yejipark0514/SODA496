@@ -64,3 +64,17 @@ colnames(CO2)[3] = "CountryCode"
 colnames(GDP)[3] = "CountryCode"
 ```
 
+```{r}
+#Merging the data
+df <-
+  CO2 %>%
+  left_join(GDP)
+```
+
+```{r}
+#Regression model
+reg_res <- lm(GDP ~ CO2, data = df)
+summary(reg_res)
+
+```
+
